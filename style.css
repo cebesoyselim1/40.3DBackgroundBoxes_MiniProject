@@ -1,0 +1,72 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-magic{
+    font-size: 2rem;
+    padding: 1rem 2.4rem;
+    margin: 2rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-image:linear-gradient(to bottom,rgba(186, 17, 253, 0.8),rgba(105, 7, 65, 0.8));
+    color: white;
+}
+
+.boxes{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4rem;
+    transition: width 0.5s ease-in, heigth 0.5s ease-in;
+}
+
+.boxes.active{
+    width: 500px;
+    height: 500px;
+}
+
+.boxes .box{
+    width: 125px;
+    height: 125px;
+    position: relative;
+    background-image: url("./gif.gif");
+    background-size: 500px 500px;
+    transition: transform 0.5s ease-in;
+}
+
+.boxes.active .box{
+    transform: rotate(360deg);
+}
+
+.boxes .box::after{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 100%;
+    width: 10px;
+    height: 125px;
+    transform: skewY(45deg);
+    background-color: black;
+}
+
+.boxes .box::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 5px;
+    width: 125px;
+    height: 10px;
+    transform: skewX(45deg);
+    background-color: black;
+}
+
